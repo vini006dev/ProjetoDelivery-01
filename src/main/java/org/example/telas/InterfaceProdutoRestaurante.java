@@ -7,11 +7,15 @@ import org.example.utils.Input;
 
 import java.util.List;
 
+import static org.example.utils.Loading.limparTela;
+
 public class InterfaceProdutoRestaurante {
 
     private ProdutoService produtoService = new ProdutoService();
 
     public void menu(Restaurante restauranteLogado) {
+
+        limparTela();
 
         boolean rodando = true;
 
@@ -50,6 +54,8 @@ public class InterfaceProdutoRestaurante {
 
     public void criarProduto(Restaurante restauranteLogado) {
 
+        limparTela();
+
         Produto p = new Produto();
 
         Input.scanner.nextLine();
@@ -70,9 +76,13 @@ public class InterfaceProdutoRestaurante {
         produtoService.cadastrar(p);
 
         System.out.println("Produto criado!");
+
+        limparTela();
     }
 
     public void listarProdutos(Restaurante restauranteLogado) {
+
+        limparTela();
 
         List<Produto> produtos =
                 produtoService.listarPorRestaurante(restauranteLogado.getId());
@@ -89,6 +99,8 @@ public class InterfaceProdutoRestaurante {
     }
 
     public void deletarProduto(Restaurante restauranteLogado) {
+
+        limparTela();
 
         System.out.println("ID do produto para deletar:");
         int idProduto = Input.scanner.nextInt();

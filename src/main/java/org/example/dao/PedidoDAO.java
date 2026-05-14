@@ -123,4 +123,99 @@ public class PedidoDAO {
             e.printStackTrace();
         }
     }
+
+    public List<Pedido> listarDisponiveis() {
+
+        List<Pedido> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM Pedido WHERE status = 'PRONTO' AND id_entregador IS NULL";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Pedido pedido = new Pedido();
+                pedido.setId(rs.getInt("id"));
+                pedido.setStatus(rs.getString("status"));
+                pedido.setIdCliente(rs.getInt("id_cliente"));
+                pedido.setIdRestaurante(rs.getInt("id_restaurante"));
+                lista.add(pedido);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
+
+    public void vincularEntregador(int idPedido, int idEntregador) {
+
+        String sql = "UPDATE Pedido SET id_entregador = ?, status = 'EM_ENTREGA' WHERE id = ?";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idEntregador);
+            stmt.setInt(2, idPedido);
+
+            stmt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Pedido> listarPorEntregador(int idEntregador) {
+
+        List<Pedido> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM Pedido WHERE id_entregador = ?";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idEntregador);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Pedido pedido = new Pedido();
+                pedido.setId(rs.getInt("id"));
+                pedido.setStatus(rs.getString("status"));
+                pedido.setIdCliente(rs.getInt("id_cliente"));
+                pedido.setIdRestaurante(rs.getInt("id_restaurante"));
+                pedido.setIdEntregador(rs.getInt("id_entregador"));
+                lista.add(pedido);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
+
+    public String buscarEnderecoRestaurante(int idRestaurante) {
+
+        String sql = "SELECT endereco FROM Restaurante WHERE id = ?";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, idRestaurante);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getString("endereco");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "Endereço não encontrado";
+    }
 }

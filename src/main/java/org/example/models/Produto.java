@@ -95,6 +95,7 @@ public class Produto {
     }
 
     public void setIdRestaurante(int id) {
+        this.id_restaurante = id;
     }
 
 

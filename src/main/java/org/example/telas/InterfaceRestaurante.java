@@ -8,6 +8,8 @@ import java.util.List;
 import org.example.services.PedidoService;
 import org.example.utils.StatusPedido;
 
+import static org.example.utils.Loading.limparTela;
+
 public class InterfaceRestaurante {
 
     private PedidoService pedidoService = new PedidoService();
@@ -24,6 +26,8 @@ public class InterfaceRestaurante {
     public void inicioRestaurante(){
         boolean rodando = true;
         while (rodando) {
+
+            limparTela();
 
             System.out.println("+---------------------------------+");
             System.out.println("|            DELIVERY             |");
@@ -59,6 +63,8 @@ public class InterfaceRestaurante {
     }
 
     public void exibirLogin(){
+
+        limparTela();
 
         Input.scanner.nextLine();
 
@@ -96,6 +102,8 @@ public class InterfaceRestaurante {
     }
 
     public void exibirCadastro(){
+
+        limparTela();
 
         Input.scanner.nextLine();
 
@@ -148,6 +156,8 @@ public class InterfaceRestaurante {
 
     public void exibirMenu(){
 
+        limparTela();
+
         if (restauranteLogado == null) {
             System.out.println("Faça login primeiro!");
             return;
@@ -193,6 +203,8 @@ public class InterfaceRestaurante {
 
 
     public void menuPedidos() {
+
+        limparTela();
 
         if (restauranteLogado == null) {
             System.out.println("Faça login primeiro!");
@@ -243,6 +255,8 @@ public class InterfaceRestaurante {
 
     public void visualizarPedidos() {
 
+        limparTela();
+
         if (restauranteLogado == null) {
             System.out.println("Faça login primeiro!");
             return;
@@ -268,6 +282,8 @@ public class InterfaceRestaurante {
 
     public void aceitarPedido() {
 
+        limparTela();
+
         System.out.println("ID do pedido:");
 
         int id = Input.scanner.nextInt();
@@ -279,6 +295,8 @@ public class InterfaceRestaurante {
 
     public void cancelarPedido() {
 
+        limparTela();
+
         System.out.println("ID do pedido:");
 
         int id = Input.scanner.nextInt();
@@ -289,6 +307,8 @@ public class InterfaceRestaurante {
     }
 
     public void finalizarPedido() {
+
+        limparTela();
 
         System.out.println("ID do pedido:");
 

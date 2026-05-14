@@ -2,27 +2,23 @@ package org.example.models;
 
 public class Cliente extends Usuario {
 
+    private String rua;
+    private String numero;
+    private String bairro;
+    private String cidade;
+
     public Cliente() {
     }
 
-    public Cliente(
-            int id,
-            String nome,
-            String telefone,
-            Endereco endereco,
-            String cpf,
-            String email,
-            String senha
-    ) {
+    public String getRua() { return rua; }
+    public void setRua(String rua) { this.rua = rua; }
 
-        super(
-                id,
-                nome,
-                telefone,
-                endereco,
-                cpf,
-                email,
-                senha
-        );
-    }
+    public String getNumero() { return numero; }
+    public void setNumero(String numero) { this.numero = numero; }
+
+    public String getBairro() { return bairro; }
+    public void setBairro(String bairro) { this.bairro = bairro; }
+
+    public String getCidade() { return cidade; }
+    public void setCidade(String cidade) { this.cidade = cidade; }
 }

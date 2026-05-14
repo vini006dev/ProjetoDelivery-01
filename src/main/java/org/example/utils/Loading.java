@@ -3,7 +3,7 @@ package org.example.utils;
 public class Loading {
 
     public static void limparTela() {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 35; i++) {
             System.out.println();
         }
     }

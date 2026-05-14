@@ -19,4 +19,12 @@ public class ClienteService {
         dao.salvar(cliente);
 
     }
+
+    public String buscarEnderecoPorCliente(int idCliente) {
+        return dao.buscarEnderecoPorCliente(idCliente);
+    }
+
+    public String buscarNomePorId(int idCliente) {
+        return dao.buscarNomePorId(idCliente);
+    }
 }

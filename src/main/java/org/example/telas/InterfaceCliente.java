@@ -8,6 +8,8 @@ import org.example.utils.Loading;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.utils.Loading.limparTela;
+
 
 public class InterfaceCliente {
 
@@ -32,6 +34,8 @@ public class InterfaceCliente {
     public void inicioCliente(){
         boolean rodando = true;
         while (rodando) {
+
+            limparTela();
 
 
 
@@ -69,6 +73,8 @@ public class InterfaceCliente {
 
     public void exibirLogin(){
 
+        limparTela();
+
         Loading.logoInfDados();
 
         Input.scanner.nextLine();
@@ -104,60 +110,49 @@ public class InterfaceCliente {
 
     public void exibirCadastro(){
 
+        limparTela();
+
         Input.scanner.nextLine();
-
-        System.out.println("Nome:");
-        String nome = Input.scanner.nextLine();
-
-        System.out.println("CPF:");
-        String cpf = Input.scanner.nextLine();
-
-        System.out.println("Email:");
-        String email = Input.scanner.nextLine();
-
-        System.out.println("Senha:");
-        String senha = Input.scanner.nextLine();
-
-        System.out.println("Telefone:");
-        String telefone = Input.scanner.nextLine();
 
         Cliente cliente = new Cliente();
 
-        cliente.setNome(nome);
-        cliente.setCpf(cpf);
-        cliente.setEmail(email);
-        cliente.setSenha(senha);
-        cliente.setTelefone(telefone);
+        System.out.println("Nome:");
+        cliente.setNome(Input.scanner.nextLine());
+
+        System.out.println("CPF:");
+        cliente.setCpf(Input.scanner.nextLine());
+
+        System.out.println("Email:");
+        cliente.setEmail(Input.scanner.nextLine());
+
+        System.out.println("Senha:");
+        cliente.setSenha(Input.scanner.nextLine());
+
+        System.out.println("Telefone:");
+        cliente.setTelefone(Input.scanner.nextLine());
+
+        System.out.println("Rua:");
+        cliente.setRua(Input.scanner.nextLine());
+
+        System.out.println("Número:");
+        cliente.setNumero(Input.scanner.nextLine());
+
+        System.out.println("Bairro:");
+        cliente.setBairro(Input.scanner.nextLine());
+
+        System.out.println("Cidade:");
+        cliente.setCidade(Input.scanner.nextLine());
 
         clienteService.cadastrar(cliente);
 
-        System.out.println(
-                "Cadastro realizado!"
-        );
-    }
-
-    private Endereco cadastrarEndereco(){
-        System.out.println("Informe os Dados!");
-        System.out.println("Id");
-        int id = Input.scanner.nextInt();
-        Input.scanner.nextLine();
-        System.out.println("Rua: ");
-        String rua = Input.scanner.nextLine();
-        System.out.println("Numero: ");
-        String numero = Input.scanner.nextLine();
-        System.out.println("Bairro: ");
-        String bairro = Input.scanner.nextLine();
-        System.out.println("Cidade: ");
-        String cidade = Input.scanner.nextLine();
-        System.out.println("Cep: ");
-        String cep = Input.scanner.nextLine();
-        Endereco endereco = new Endereco(id, rua, numero, bairro, cidade, cep);
-        return endereco;
+        System.out.println("Cadastro realizado!");
     }
 
     public void exibirMenu(){
         boolean rodando = true;
         while (rodando){
+
+            limparTela();
 
             System.out.println("+---------------------------------+");
             System.out.println("|            DELIVERY             |");
@@ -188,6 +183,8 @@ public class InterfaceCliente {
     }
 
     public void listarRestaurantes(){
+
+        limparTela();
 
         List<Restaurante> restaurantes =
                 restauranteService.listar();
@@ -253,6 +250,8 @@ public class InterfaceCliente {
 
 
     public void fazerPedido(int idRestaurante){
+
+        limparTela();
 
         List<Produto> produtos =
                 produtoService
@@ -442,6 +441,8 @@ public class InterfaceCliente {
 
     public void meusPedidos(){
 
+        limparTela();
+
         List<Pedido> pedidos =
                 pedidoService
                         .listarPorCliente(
@@ -521,6 +522,8 @@ public class InterfaceCliente {
     }
 
     private void detalhesPedido(int id){
+
+        limparTela();
 
         System.out.println(
                 "+------ DETALHES ------+"

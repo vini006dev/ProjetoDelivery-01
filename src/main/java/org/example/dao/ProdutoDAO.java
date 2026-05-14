@@ -65,14 +65,15 @@ public class ProdutoDAO {
 
     public void cadastrar(Produto p) {
 
-        String sql = "INSERT INTO Produto (nome, preco, id_restaurante) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Produto (nome, categoria, preco, id_restaurante) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, p.getNome());
-            stmt.setDouble(2, p.getPreco());
-            stmt.setInt(3, p.getId_restaurante());
+            stmt.setString(2, p.getCategoria());
+            stmt.setDouble(3, p.getPreco());
+            stmt.setInt(4, p.getId_restaurante());
 
             stmt.executeUpdate();
 
