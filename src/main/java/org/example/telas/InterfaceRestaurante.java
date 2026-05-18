@@ -43,7 +43,7 @@ public class InterfaceRestaurante {
             Loading.LimparTerminal("Carregando...");
 
             System.out.println("┌──────────────────────────────────┐");
-            System.out.println("│         DELIVERY SYSTEM          │");
+            System.out.println("│         COMIDINHA                │");
             System.out.println("│           > Restaurante          │");
             System.out.println("├──────────────────────────────────┤");
             System.out.println("│                                  │");

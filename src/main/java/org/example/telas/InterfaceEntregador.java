@@ -28,7 +28,7 @@ public class InterfaceEntregador {
             );
 
             System.out.println("┌──────────────────────────────────┐");
-            System.out.println("│         DELIVERY SYSTEM          │");
+            System.out.println("│         COMIDINHA                │");
             System.out.println("│            > Entregador          │");
             System.out.println("├──────────────────────────────────┤");
             System.out.println("│                                  │");

@@ -3,24 +3,9 @@ package org.example.telas;
 import org.example.utils.Input;
 import org.example.utils.Loading;
 
-public class InterfaceInicial {
+import static org.example.utils.Input.lerOpcao;
 
-    // =========================================================
-    // UTILITARIO — leitura segura de inteiros
-    // evita crash quando usuario digita letra em vez de numero
-    // =========================================================
-    private int lerOpcao() {
-        while (true) {
-            try {
-                int opcao = Input.scanner.nextInt();
-                return opcao;
-            } catch (Exception e) {
-                Input.scanner.nextLine();
-                System.out.println("  > Digite apenas números!");
-                System.out.print("  > ");
-            }
-        }
-    }
+public class InterfaceInicial {
 
     // =========================================================
     // MENU INICIAL

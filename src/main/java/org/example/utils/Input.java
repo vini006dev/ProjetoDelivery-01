@@ -8,7 +8,7 @@ public class Input {
             new Scanner(System.in);
 
     // =========================================================
-    // LEITURA SEGURA DE INTEIROS
+    // INTEIROS
     // =========================================================
     public static int lerOpcao() {
 
@@ -32,7 +32,32 @@ public class Input {
     }
 
     // =========================================================
-    // LEITURA SEGURA DE TEXTO
+    // DOUBLE
+    // =========================================================
+    public static double lerDouble() {
+
+        while (true) {
+
+            try {
+
+                return Double.parseDouble(
+                        scanner.nextLine()
+                                .replace(",", ".")
+                );
+
+            } catch (Exception e) {
+
+                System.out.println(
+                        "  > Digite um valor válido!"
+                );
+
+                System.out.print("  > ");
+            }
+        }
+    }
+
+    // =========================================================
+    // TEXTO
     // =========================================================
     public static String lerTexto(String campo) {
 

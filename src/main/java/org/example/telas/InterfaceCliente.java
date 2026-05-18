@@ -39,7 +39,7 @@ public class InterfaceCliente {
             Loading.LimparTerminal("Carregando...");
 
             System.out.println("┌──────────────────────────────────┐");
-            System.out.println("│         DELIVERY SYSTEM          │");
+            System.out.println("│          COMIDINHA               │");
             System.out.println("│             > Cliente            │");
             System.out.println("├──────────────────────────────────┤");
             System.out.println("│                                  │");
@@ -211,7 +211,7 @@ public class InterfaceCliente {
             Loading.LimparTerminal("Carregando menu...");
 
             System.out.println("┌──────────────────────────────────┐");
-            System.out.println("│         DELIVERY SYSTEM          │");
+            System.out.println("│         COMIDINHA                │");
 
             System.out.printf (
                     "│ Cliente: %-24s│%n",
