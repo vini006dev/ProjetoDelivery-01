@@ -76,6 +76,7 @@ public class InterfaceCliente {
     }
 
 
+
     public void exibirLogin() {
 
         Loading.LimparTerminal("Carregando login...");
@@ -716,3 +717,57 @@ public class InterfaceCliente {
 
 
 }
+
+// Método responsável por iniciar a interface do cliente.
+// Exibe o menu inicial do sistema e controla a navegação
+// entre as opções de login, cadastro e saída da interface.
+//
+// O menu permanece em execução até que o usuário escolha
+// voltar, além de validar as opções digitadas.
+
+// Método responsável por exibir a tela de login do cliente.
+// Solicita email e senha, realiza a autenticação dos dados
+// informados e verifica se o usuário existe no sistema.
+//
+// Caso o login seja realizado com sucesso, o cliente é
+// armazenado como usuário logado e o menu principal é exibido.
+
+// Método responsável pelo cadastro de novos clientes.
+// Coleta os dados pessoais e de endereço informados
+// pelo usuário e cria um novo registro no sistema.
+//
+// Após o cadastro, os dados são enviados para o serviço
+// responsável pelo armazenamento das informações.
+
+// Método responsável por exibir o menu principal do cliente.
+// Permite acessar as funcionalidades do sistema após o login,
+// como visualizar restaurantes e consultar pedidos.
+//
+// Utiliza uma estrutura de repetição para manter o menu
+// ativo até que o usuário escolha sair da conta.
+
+// Método responsável por listar os restaurantes cadastrados.
+// Exibe as informações disponíveis no sistema e permite
+// que o usuário selecione um restaurante para realizar pedidos.
+//
+// Também valida as opções digitadas e controla a navegação
+// entre as telas da aplicação.
+
+// Método responsável pela realização de pedidos.
+// Exibe o cardápio do restaurante selecionado, permite
+// adicionar produtos ao carrinho e calcula o valor total.
+//
+// Após a confirmação, o pedido e os itens escolhidos
+// são registrados no sistema e vinculados ao cliente logado.
+
+// Método responsável por listar os pedidos do cliente logado.
+// Exibe informações como número do pedido, status
+// e restaurante relacionado ao pedido realizado.
+//
+// Também permite acessar a tela de detalhes de um pedido específico.
+
+// Método responsável por exibir os detalhes de um pedido.
+// Mostra informações básicas relacionadas ao pedido selecionado.
+//
+// Atualmente a funcionalidade está em desenvolvimento
+// e serve como estrutura para futuras implementações.
